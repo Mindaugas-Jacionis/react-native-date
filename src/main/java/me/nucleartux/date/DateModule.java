@@ -1,3 +1,4 @@
+//old
 package me.nucleartux.date;
 
 import android.app.Activity;
@@ -70,17 +71,6 @@ public class DateModule extends ReactContextBaseJavaModule {
                                             Callback successCallback) {
     DialogFragment dateDialog = new TimePicker(DateFormatHelper.parseDate(initialDateString),
             errorCallback, successCallback);
-    Activity activity = getCurrentActivity();
-    if (activity != null) {
-      dateDialog.show(activity.getFragmentManager(), "timePicker");
-    }
-  }
-
-  @ReactMethod
-  public void showTimepickerWithInitialDateInMilliseconds(String initialDateString, Callback errorCallback,
-                                            Callback successCallback) {
-      DialogFragment dateDialog = new TimePicker(DateFormatHelper.parseDateInMilliseconds(Long.parseLong(initialDateString)),
-              errorCallback, successCallback);
     Activity activity = getCurrentActivity();
     if (activity != null) {
       dateDialog.show(activity.getFragmentManager(), "timePicker");
